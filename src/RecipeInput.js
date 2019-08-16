@@ -143,4 +143,4 @@ class RecipeInput extends Component {
   }
 }
 
-export default RecipeInput;
+export default RecipeInput

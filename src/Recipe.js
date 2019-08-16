@@ -8,11 +8,13 @@ static propTypes = {
   title: PropTypes.string.isRequired,
   ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
   instructions: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired
+  img: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  onDelete: PropTypes.func.isRequired
 }
 
     render(){
-      const {title, img, instructions} = this.props;
+      const {title, img, instructions, id, onDelete} = this.props;
       const ingredients = this.props.ingredients.map((ing, index) => (
           <li key={index}>{ing}</li>
       ));
@@ -29,6 +31,7 @@ static propTypes = {
             </ul> 
             <h4>Instructions:</h4>
             <p>{instructions}</p>
+            <button type="button" onClick={() => onDelete(id)}>DELETE</button>
           </div>
         </div>
       );
